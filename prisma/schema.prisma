@@ -14,7 +14,7 @@ model Trip {
   ends_at      DateTime
   is_confirmed Boolean       @default(false)
   created_at   DateTime      @default(now())
-  participants  Participant[]
+  participants Participant[]
 
   @@map("trips")
 }
@@ -29,5 +29,5 @@ model Participant {
 
   trip Trip @relation(fields: [trip_id], references: [id])
 
-  @@map("participant")
+  @@map("participants")
 }
